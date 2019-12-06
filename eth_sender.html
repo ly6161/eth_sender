@@ -1,0 +1,69 @@
+<!--author:Liew Yi
+Github: https://github.com/ly6161/eth_sender
+web3.js code thanks to Dr. Loke 
+Dr. Loke's github:
+https://github.com/ksloke/sendEther
+https://github.com/ksloke/sendEther/blob/master/web2sendEther.html
+-->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
+
+<script src="/script_logic.js"></script>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Eth sender</title>
+  </head>
+  <body>
+	<div style="padding:2em;">
+	<label>Enter the E3T token address</label>
+	<input type="text" id="token_addr_input" style="min-width:20em;"/>
+	<button id="regenerate_contract_object_button">Use token address</button>
+	<!--<br>
+	<button id="pause_button">Pause</button>
+	<button id="resume_button">Resume</button>
+	<br>-->	
+	<br>
+	<span>Perform sent addresses backups</span>
+	<input type="checkbox" id="regular_backups_checkbox"/>
+	<br>	
+	<label>Sent address backups every N sends</label>
+	<input type="text" id="backup_every_num_sends_input">
+	<br>
+	<label>Load 'address to send' file (.csv)</label>
+	<input type="file" id="to_send_file"/>
+	<br>	
+	<textarea id="to_send_text_area"></textarea>
+	<br>
+	<label>Load 'address sent' file (.csv) to not send to these addresses again</label>
+	<input type="file" id="sent_file"/>
+	<br>
+	<textarea id="sent_addr_text_area"></textarea>
+	<br>
+	<br>
+	<button id="send_button">Start sending</button>
+	<br>	
+	<a href="/randomlink" download="no_backups" id="download_link_element">Backup sent addresses</a>
+	</div>
+  </body>
+</html>
+
+
+<!-- Author:Liew Yi
+Github:https://github.com/ly6161/eth_sender
+web3.js code based on (Dr. Loke's github):
+https://github.com/ksloke/sendEther
+https://github.com/ksloke/sendEther/blob/master/web2sendEther.html
+-->
